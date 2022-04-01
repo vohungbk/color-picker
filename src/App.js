@@ -53,7 +53,10 @@ const App = () => {
               <div
                 className={`color-item${selectedProjectColor === item.color ? " selected" : ""}`}
                 style={{ background: item.color }}
-                onClick={() => setSelectedProjectColor(item.color)}
+                onClick={() => {
+                  setSelectedProjectColor(item.color);
+                  setColor(toColor("hex", item.color));
+                }}
               >
                 {selectedProjectColor === item.color && <BsCheck2 size={20} color={item.checkColor} />}
               </div>
@@ -65,7 +68,10 @@ const App = () => {
               <div
                 className={`color-item${selectedImageColor === item ? " selected" : ""}`}
                 style={{ background: item }}
-                onClick={() => setSelectedImageColor(item)}
+                onClick={() => {
+                  setSelectedImageColor(item);
+                  setColor(toColor("hex", item));
+                }}
               >
                 {selectedImageColor === item && <BsCheck2 size={20} />}
               </div>
@@ -77,7 +83,10 @@ const App = () => {
               <div
                 className={`color-item${selectedPresetsColor === item ? " selected" : ""}`}
                 style={{ background: item }}
-                onClick={() => setSelectedPresetsColor(item)}
+                onClick={() => {
+                  setSelectedPresetsColor(item);
+                  setColor(toColor("hex", item));
+                }}
               >
                 {selectedPresetsColor === item && <BsCheck2 size={20} />}
               </div>
